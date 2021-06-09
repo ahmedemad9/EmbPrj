@@ -7,14 +7,14 @@ void SystemInit(){
 	SCB->CPACR|=((3UL<<10*2)|(3UL<<11*2));
 }
 
-	void LED_init(void);
-	void Seven_init(void);
-	void UART_init(void);
-	void array (char*str, int maxlenth);
-	void parcing(char data [], float*lat, float*lon);
-	double CalcGPSDistance(double lat1, double lon1, double lat2, double lon2);
-	void checkDist(int distance);
-	void ssd_v2(int c);
+void LED_init(void);
+void Seven_init(void);
+void UART_init(void);
+void array (char*str, int maxlenth);
+void parcing(char data [], float*lat, float*lon);
+double CalcGPSDistance(double lat1, double lon1, double lat2, double lon2);
+void checkDist(int distance);
+void ssd_v2(int c);
 
 int main() {
 	float lat;
