@@ -1,0 +1,98 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\aemad\OneDrive\Desktop\Junior\S2\Embedded\try_whole\whole.uvproj
+Project File Date:  06/11/2021
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling array.c...
+array.c(8): warning:  #177-D: variable "c" was declared but never referenced
+      char c;
+array.c: 1 warning, 0 errors
+compiling CalcGPSDistance.c...
+compiling checkDist.c...
+compiling delayMs.c...
+compiling LED_init.c...
+compiling main.c...
+main.c(22): warning:  #177-D: variable "maxlenth" was declared but never referenced
+        int maxlenth=350;
+main.c: 1 warning, 0 errors
+compiling parcing.c...
+compiling Seven_init.c...
+compiling ssd_v2.c...
+compiling UART_init.c...
+compiling UART2_Receiver.c...
+assembling startup_TM4C123.s...
+linking...
+Program Size: Code=8168 RO-data=1248 RW-data=4 ZI-data=516  
+".\whole.axf" - 0 Error(s), 2 Warning(s).
+never referenced
+        int maxlenth=350;
+main.c: 2 warnings, 1 error
+compiling parcing.c...
+compiling Seven_init.c...
+compiling ssd_v2.c...
+compiling UART_init.c...
+compiling UART2_Receiver.c...
+assembling startup_TM4C123.s...
+".\whole.axf" - 1 Error(s), 3 Warning(s).
+Target not created
+TL_RCGCGPIO_R" is undefined
+  SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R3; // Clock initialization port D
+UART_init.c(4): error:  #20: identifier "SYSCTL_RCGCGPIO_R3" is undefined
+  SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R3; // Clock initialization port D
+UART_init.c(5): error:  #20: identifier "GPIO_PORTD_LOCK_R" is undefined
+  GPIO_PORTD_LOCK_R = 0x4C4F434B;          // UNLOCK for pD7
+UART_init.c(6): error:  #20: identifier "GPIO_PORTD_CR_R" is undefined
+  GPIO_PORTD_CR_R = 0xC0;
+UART_init.c(7): error:  #20: identifier "UART2_CTL_R" is undefined
+  UART2_CTL_R = 0;                         // disable UART
+UART_init.c(8): error:  #20: identifier "UART2_IBRD_R" is undefined
+  UART2_IBRD_R = 104;                      // IBRD = 16000000/(16*9600) = 104.16666
+UART_init.c(9): error:  #20: identifier "UART2_FBRD_R" is undefined
+  UART2_FBRD_R = 11;                       // FBRD = (0.1667*64) + 0.5 = 11.1667
+UART_init.c(12): error:  #20: identifier "UART2_LCRH_R" is undefined
+  UART2_LCRH_R = (UART_LCRH_FEN | UART_LCRH_WLEN_8);                       //FIFO enable 8 bit length
+UART_init.c(12): error:  #20: identifier "UART_LCRH_FEN" is undefined
+  UART2_LCRH_R = (UART_LCRH_FEN | UART_LCRH_WLEN_8);                       //FIFO enable 8 bit length
+UART_init.c(12): error:  #20: identifier "UART_LCRH_WLEN_8" is undefined
+  UART2_LCRH_R = (UART_LCRH_FEN | UART_LCRH_WLEN_8);                       //FIFO enable 8 bit length
+UART_init.c(13): error:  #20: identifier "UART_CTL_RXE" is undefined
+  UART2_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);           //with Tx
+UART_init.c(13): error:  #20: identifier "UART_CTL_TXE" is undefined
+  UART2_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);           //with Tx
+UART_init.c(13): error:  #20: identifier "UART_CTL_UARTEN" is undefined
+  UART2_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);           //with Tx
+UART_init.c(14): error:  #20: identifier "GPIO_PORTD_AFSEL_R" is undefined
+  GPIO_PORTD_AFSEL_R |= 0xC0;                                             // enable alternative function for pD6 pD7
+UART_init.c(15): error:  #20: identifier "GPIO_PORTD_PCTL_R" is undefined
+  GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R &~ 0xff000000) | (GPIO_PCTL_PD6_U2RX | GPIO_PCTL_PD7_U2TX);            //with TX
+UART_init.c(15): error:  #20: identifier "GPIO_PCTL_PD6_U2RX" is undefined
+  GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R &~ 0xff000000) | (GPIO_PCTL_PD6_U2RX | GPIO_PCTL_PD7_U2TX);            //with TX
+UART_init.c(15): error:  #20: identifier "GPIO_PCTL_PD7_U2TX" is undefined
+  GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R &~ 0xff000000) | (GPIO_PCTL_PD6_U2RX | GPIO_PCTL_PD7_U2TX);            //with TX
+UART_init.c(16): error:  #20: identifier "GPIO_PORTD_AMSEL_R" is undefined
+  GPIO_PORTD_AMSEL_R |= 0;                                               // analog disabled
+UART_init.c(17): error:  #20: identifier "GPIO_PORTD_DEN_R" is undefined
+  GPIO_PORTD_DEN_R |= 0xC0;                                             // pins 6,7 set to digital
+UART_init.c: 0 warnings, 21 errors
+compiling UART2_Receiver.c...
+UART2_Receiver.c(4): error:  #20: identifier "UART2_FR_R" is undefined
+  while ((UART2_FR_R & UART_FR_RXFE) != 0); // wait until Rx buffer is not full before giving it another byte
+UART2_Receiver.c(4): error:  #20: identifier "UART_FR_RXFE" is undefined
+  while ((UART2_FR_R & UART_FR_RXFE) != 0); // wait until Rx buffer is not full before giving it another byte
+UART2_Receiver.c(5): error:  #20: identifier "UART2_DR_R" is undefined
+  data = UART2_DR_R;
+UART2_Receiver.c: 0 warnings, 3 errors
+assembling startup_TM4C123.s...
+".\whole.axf" - 26 Error(s), 0 Warning(s).
+Target not created
+is undefined
+  data = UART2_DR_R;
+UART2_Receiver.c: 0 warnings, 3 errors
+assembling startup_TM4C123.s...
+".\whole.axf" - 27 Error(s), 0 Warning(s).
+Target not created
