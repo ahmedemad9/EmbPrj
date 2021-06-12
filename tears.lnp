@@ -1,0 +1,16 @@
+--cpu Cortex-M4.fp
+".\startup_tm4c123.o"
+".\array.o"
+".\calcgpsdistance.o"
+".\checkdist.o"
+".\delayms.o"
+".\led_init.o"
+".\main.o"
+".\parcing.o"
+".\seven_init.o"
+".\ssd_v2.o"
+".\uart_init.o"
+".\uart2_receiver.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\tears.map" -o .\tears.axf

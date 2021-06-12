@@ -1,0 +1,10 @@
+.\array.o: ..\try_whole2\array.c
+.\array.o: ..\try_whole2\tm4c123gh6pm.h
+.\array.o: D:\Kei4l\ARM\Inc\TI\TM4C123\tm4c123.h
+.\array.o: D:\Kei4l\ARM\Inc\TI\TM4C123\TM4C123GH6PM.h
+.\array.o: D:\Kei4l\ARM\CMSIS\Include\core_cm4.h
+.\array.o: D:\Kei4l\ARM\ARMCC\bin\..\include\stdint.h
+.\array.o: D:\Kei4l\ARM\CMSIS\Include\core_cmInstr.h
+.\array.o: D:\Kei4l\ARM\CMSIS\Include\core_cmFunc.h
+.\array.o: D:\Kei4l\ARM\CMSIS\Include\core_cm4_simd.h
+.\array.o: D:\Kei4l\ARM\Inc\TI\TM4C123\system_TM4C123.h
