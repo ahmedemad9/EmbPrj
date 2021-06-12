@@ -24,9 +24,9 @@ int main() {
 	float oldlon;
 	float distance=0;
 	int fixFlag=0;
-	char y[72]="$GPRMC,220516,A,30.0448,N,31.2396,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
+	char y[75]="$GPRMC,220516,A,00030.04480,N,00031.23969,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
 	//ahmed edited the following section
-	char x[72]="$GPRMC,220516,A,30.0448,N,31.2397,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
+	char x[75]="$GPRMC,220516,A,00030.04480,N,00031.23970,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
 
 	int counter=0;
 	int dist;
