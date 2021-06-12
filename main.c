@@ -23,6 +23,7 @@ int main() {
 	float oldlat;
 	float oldlon;
 	float distance=0;
+	int fixFlag=0;
 	char y[72]="$GPRMC,220516,A,30.0448,N,31.2396,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
 	//ahmed edited the following section
 	char x[72]="$GPRMC,220516,A,30.0448,N,31.2397,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
@@ -34,8 +35,11 @@ int main() {
 	LED_init();
 	Seven_init();
 	UART_init();
-	//array(y,maxlenth);
-	parcing(y,&lat,&lon);
+	while(fixFlag==0){
+		//array(y,maxlenth);
+		parcing(y,&lat,&lon);
+		if(lat!=0 && lon !=0) fixFlag=1;
+	}
 	while(flag==0) {
 		if( (counter%1000) == 0){
 			oldlat=lat;
