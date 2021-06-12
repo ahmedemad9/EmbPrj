@@ -9,7 +9,7 @@ void SystemInit(){
 
 void LED_init(void);
 void Seven_init(void);
-void UART_init(void);
+void UART2_init(void);
 void array (char*str, int maxlenth);
 void parcing(char data [], float*lat, float*lon);
 float CalcGPSDistance(float lat1, float lon1, float lat2, float lon2);
@@ -19,14 +19,14 @@ void ssd_v2(int c);
 int main() {
 	float lat;
 	float lon;
-	int maxlenth=350;
+	int maxlenth=75;
 	float oldlat;
 	float oldlon;
 	float distance=0;
 	int fixFlag=0;
-	char y[75]="$GPRMC,220516,A,00030.04480,N,00031.23969,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
+	char y[75]={'0'};			//i made an edit here
 	//ahmed edited the following section
-	char x[75]="$GPRMC,220516,A,00030.04480,N,00031.23970,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
+	//char x[75]="$GPRMC,220516,A,00030.04480,N,00031.23970,W,173.8,231.8,130694,004.2,W*70";			//i made an edit here
 
 	int counter=0;
 	int dist;
@@ -34,9 +34,9 @@ int main() {
 	//int fix_flag=0;
 	LED_init();
 	Seven_init();
-	UART_init();
+	UART2_init();
 	while(fixFlag==0){
-		//array(y,maxlenth);
+		array(y,maxlenth);
 		parcing(y,&lat,&lon);
 		if(lat!=0 && lon !=0) fixFlag=1;
 	}
@@ -44,18 +44,20 @@ int main() {
 		if( (counter%1000) == 0){
 			oldlat=lat;
 			oldlon=lon;
-			//array(y,maxlenth);
-			parcing(x,&lat,&lon);
+			array(y,maxlenth);
+			parcing(y,&lat,&lon);
 			if(lat==0 || lon ==0){ lat=1; lon=1;}
 			distance += CalcGPSDistance(oldlat, oldlon, lat, lon);
 		}
-		if (GPIO_PORTF_DATA_R == 0x01) flag=1 ;  		
+		if ((GPIO_PORTF_DATA_R & 0x10) == 0x00) flag =1 ;  		
 		counter++;
 		checkDist(distance);
 		dist = distance;
 		ssd_v2(dist);
 	}
+			GPIO_PORTF_DATA_R   = 0x08;
+	while (1){
 	ssd_v2(dist);
-
+	}
 	return 0;
 }
