@@ -9,7 +9,7 @@ void SystemInit(){
 
 void LED_init(void);
 void Seven_init(void);
-void UART_init(void);
+void UART2_init(void);
 void array (char*str, int maxlenth);
 void parcing(char data [], float*lat, float*lon);
 float CalcGPSDistance(float lat1, float lon1, float lat2, float lon2);
@@ -36,7 +36,7 @@ int main() {
 	//int fix_flag=0;
 	LED_init();
 	Seven_init();
-	UART_init();
+	UART2_init();
 //ssd_v2(555);
 	while(fixFlag==0){
 		//ssd_v2(999);
