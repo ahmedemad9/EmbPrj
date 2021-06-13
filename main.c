@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-//#include <C:/Keil/EE319Kware/inc/tm4c123gh6pm.h>
+#include <C:/Keil/EE319Kware/inc/tm4c123gh6pm.h>
 #include <tm4c123gh6pm.h>
 #include <tm4c123.h>
 #include <stdlib.h>
@@ -11,7 +11,7 @@ SCB->CPACR|=((3UL<<10*2)|(3UL<<11*2));
 
 void LED_init(void);
 void Seven_init(void);
-void UART_init(void);
+void UART2_init(void);
 double CalcGPSDistance(double lat1, double lon1, double lat2, double lon2);
 void checkDist(int distance);
 void ssd_v2(int c, int seconds);
@@ -30,11 +30,11 @@ float flat, latdeg ,latmin,lati ,latsec;
 float flon, londeg ,lonmin,longt, lonsec; 
 void parsing(){
     
-char UART2_Receiver(void);
+char UART2_read(void);
     
     while(finish==0){
             
-        Gpsdata = UART2_Receiver();    
+        Gpsdata = UART2_read();    
         flag = 1;
     
         if( Gpsdata == '$' && pos==0){
@@ -130,7 +130,7 @@ float total_distance=0;
 float dist=0;
 int quit = 0;
 int flg =0;
-UART_init();
+UART2_init();
 parsing();
 LED_init();
 Seven_init();
