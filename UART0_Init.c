@@ -26,3 +26,4 @@ void UART0_write(char c){
     while((UART0_FR_R & UART_FR_TXFF) != 0);
     UART0_DR_R = c;
 }
+
